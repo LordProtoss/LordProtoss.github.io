@@ -1,10 +1,12 @@
 var newInput = document.createElement("input");
+newInput.setAttribute("id", "add_input");
 newInput.setAttribute("type", "text");
 var taskButton = document.createElement("button");
+taskButton.setAttribute("id", "add_button")
 taskButton.addEventListener("click", addElementByButton);
 taskButton.innerHTML = "Добавить";
-$("#root").append(newInput);
-$("#root").append(taskButton);
+$("#root").prepend(taskButton);
+$("#root").prepend(newInput);
 addElement("Сделать задание #3 по web-программированию");
 function addElement(string)
 {

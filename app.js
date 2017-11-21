@@ -1,11 +1,11 @@
-var newInput = document.createElement('input');
-newInput.setAttribute('type', 'text');
-var taskButton = document.createElement('button');
-taskButton.setAttribute('id', 'add_task');
-taskButton.addEventListener('click', addElementByButton);
+var newInput = document.createElement("input");
+newInput.setAttribute("type", "text");
+var taskButton = document.createElement("button");
+taskButton.addEventListener("click", addElementByButton);
 taskButton.innerHTML = "Добавить";
 document.getElementById("root").appendChild(newInput);
 document.getElementById("root").appendChild(taskButton);
+/*$("root") не работает. Вообще*/
 addElement("Сделать задание #3 по web-программированию");
 function addElement(string)
 {

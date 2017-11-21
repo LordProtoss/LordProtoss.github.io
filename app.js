@@ -3,9 +3,8 @@ newInput.setAttribute("type", "text");
 var taskButton = document.createElement("button");
 taskButton.addEventListener("click", addElementByButton);
 taskButton.innerHTML = "Добавить";
-document.getElementById("root").appendChild(newInput);
-document.getElementById("root").appendChild(taskButton);
-/*$("root") не работает. Вообще*/
+$("#root").append(newInput);
+$("#root").append(taskButton);
 addElement("Сделать задание #3 по web-программированию");
 function addElement(string)
 {
@@ -21,6 +20,7 @@ function addElement(string)
   var newUl = document.createElement('ul');
   newUl.appendChild(newLi);
   document.getElementById("root").appendChild(newUl);
+  $("#root").append(newUl);
 }
 function addElementByButton() {
   addElement(newInput.value);

@@ -26,5 +26,5 @@ function addElementByButton() {
   addElement(newInput.value);
 }
 function deleteButton () {
-  this.parentNode.remove();
+  this.parentNode.parentNode.removeChild(this.parentNode);
 }

@@ -1,24 +1,30 @@
-var newUl = $("#root").createElement("ul");
-var newButton = document.createElement("button");
-add_task_button.setAttribute("id", "one-task");
-add_task_button.addEventListener("click", addInput);
-add_task_button.innerHTML = "Добавить";
-function addInput()
+var newInput = document.createElement('input');
+newInput.setAttribute('type', 'text');
+var taskButton = document.createElement('button');
+taskButton.setAttribute('id', 'add_task');
+taskButton.addEventListener('click', addElementByButton);
+taskButton.innerHTML = "Добавить";
+document.getElementById("root").appendChild(newInput);
+document.getElementById("root").appendChild(taskButton);
+addElement("Сделать задание #3 по web-программированию");
+function addElement(string)
 {
-  var newLi = newUl.createElement("li");
-  var newSpan = newLi.createElement("span");
-  newSpan.innerHtml = "Сделать задание #3 по web-программированию";
+  var newButton = document.createElement('button');
+  newButton.setAttribute("name", "Удалить");
+  newButton.innerText = "Удалить";
+  newButton.addEventListener('click', deleteButton);
+  var newSpan = document.createElement('span');
+  newSpan.innerHTML = string;
+  var newLi = document.createElement('li');
   newLi.appendChild(newSpan);
-  var newInput = newLi.CreateElement("button");
-  newInput.setAttribute("name", "Удалить");
-  newInput.innerText = "Удалить";
-  newInput.addEventListener("click", deleteInput);
-  newLi.appendChild(newInput);
+  newLi.appendChild(newButton);
+  var newUl = document.createElement('ul');
   newUl.appendChild(newLi);
+  document.getElementById("root").appendChild(newUl);
 }
-addInput();
-$("root").appendChild(add_task_button);
-function deleteInput()
-{
+function addElementByButton() {
+  addElement(newInput.value);
+}
+function deleteButton () {
   this.parentNode.remove();
 }
